@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap');
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+@theme {
+    --color-main: #2563EB;
+    --color-button: #E21011;
+    --color-supporting: #F97316;
+    --color-background: #FFFFFF;
+
+    /* Fonts */
+    --font-roboto: "Roboto", "sans-serif";
+    --font-teko: "Teko", "sans-serif";
+
+    /* For Dark Theme */
+    --color-dark-supporting: #BD5D1A; /* For Supporting Text */
+    --color-dark-background: #121212; /* For Main Background*/
+    --color-dark-surface: #2A2A2A ; /* Cards, Modals, Containers */
+    --color-dark-accent: #53B17A; /* Buttons, highlights */
+    --color-dark-primary: #B0B0B0; /* Heading, Important Text */
+    --color-dark-secondary: #A0A0A0; /* Secondary text, labels */
+    --color-dark-border: #2D2D2D; /* Dividers, card borders */
+    
+    --font-roboto: "roboto", "sans-serif"; /* Fonts */
+}
