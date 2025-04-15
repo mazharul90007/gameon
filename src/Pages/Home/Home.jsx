@@ -3,6 +3,7 @@ import HomeBanner from "./HomeComponents/Banner/HomeBanner";
 import FeaturedProducts from "./HomeComponents/FeaturedProducts/FeaturedProducts";
 import HomeCategory from "./HomeComponents/HomeCategory/HomeCategory";
 import RecentProducts from "./HomeComponents/RecentProducts/RecentProducts";
+import Testimonials from "./HomeComponents/Testimonials/Testimonials";
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
             <HomeCategory></HomeCategory>
             <FeaturedProducts></FeaturedProducts>
             <AboutUs></AboutUs>
+            <Testimonials></Testimonials>
         </div>
     );
 };
