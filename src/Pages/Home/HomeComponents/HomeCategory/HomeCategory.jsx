@@ -37,7 +37,7 @@ const HomeCategory = () => {
     ];
 
     return (
-        <div className="mb-20 w-11/12 mx-auto">
+        <div className="w-11/12 mx-auto">
             {/* Categories Section (unchanged) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {categories.map((category, idx) => (
