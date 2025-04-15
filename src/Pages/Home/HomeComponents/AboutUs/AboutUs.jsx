@@ -36,7 +36,7 @@ const AboutUs = () => {
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ margin: "-100px" }}
+      viewport={{once:true, margin: "-100px" }}
     >
       {/* Left Column - Images */}
       <div className="relative flex items-center justify-center h-[400px] md:h-auto">

@@ -68,7 +68,7 @@ const Testimonials = () => {
                     variants={container}
                     initial="hidden"
                     whileInView="show"
-                    viewport={{ margin: "0px 0px -100px 0px" }}
+                    viewport={{ once:true, margin: "0px 0px -100px 0px" }}
                 >
                     {testimonials.map((testimonial) => (
                         <motion.div
