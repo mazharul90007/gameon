@@ -90,7 +90,7 @@ const Navbar = () => {
     ];
 
     const navLinkClasses = ({ isActive }) =>
-        `flex items-center gap-2 hover:text-green-700 ${isActive ? "text-green-700" : ""} ${!scrolled && darkMode ? "text-white" : ""}`;
+        `flex items-center gap-2 hover:text-main py-1 px-2 hover:border-b-2 hover:border-main rounded transform transition-transform duration-300 ${isActive ? "text-main" : ""}`;
 
     const renderLinks = (
         <>
@@ -118,8 +118,7 @@ const Navbar = () => {
                 <div className="">
                     <Link
                         to="/"
-                        className={`text-3xl md:text-4xl font-bold flex items-center font-teko gap-2 ${!scrolled && darkMode ? "text-white" : "text-main"
-                            }`}
+                        className={`text-3xl md:text-4xl font-bold flex items-center font-teko gap-2 text-main`}
                     >
                         GameOn
                     </Link>

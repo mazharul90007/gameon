@@ -2,11 +2,11 @@ import noImage from "../assets/Common_image/noImage.png"
 
 const ProductCard = ({product}) => {
     return (
-        <div className="bg-base-100 hover:shadow-lg transition flex flex-col cursor-pointer gap-8">
+        <div className="bg-base-100 hover:shadow-lg transition flex flex-col cursor-pointer gap-8 border border-gray-300 rounded">
             <figure className="">
                 <img src={product?.image ? product.image : noImage} alt={product.title} className="h-64 object-cover w-full" />
             </figure>
-            <div className="flex flex-col flex-grow gap-2">
+            <div className="flex flex-col flex-grow gap-2 p-2">
                 <h2 className="uppercase md:text-base font-semibold">{product.title}</h2>
                 <div className="space-x-2 mt-auto">
                     <span className="text-lg font-semibold">${product.price.toFixed(2)}</span>
