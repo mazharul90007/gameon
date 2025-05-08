@@ -107,10 +107,10 @@ const Navbar = () => {
     return (
         <nav
             className={`px-4 md:px-14 py-1 md:py-4 fixed top-0 z-40 w-full transition-all duration-300 ${scrolled
-                    ? darkMode
-                        ? "bg-[#1A1A1A] shadow-lg"
-                        : "bg-white shadow-lg"
-                    : "bg-transparent"
+                ? darkMode
+                    ? "bg-[#1A1A1A] shadow-lg"
+                    : "bg-white shadow-lg"
+                : "bg-transparent"
                 }`}
         >
             <div className="flex items-center justify-between">
@@ -130,29 +130,33 @@ const Navbar = () => {
                     {renderLinks}
                 </div>
 
-                {/* Dark Mode Toggle */}
-                <button
-                    onClick={activeMode}
-                    aria-label="Toggle dark mode"
-                    className={`border border-dashed ${scrolled ? darkMode ? "border-white" : "border-black" : 'border-white'
-                        } text-base md:text-xl p-2 ml-4 rounded-full shadow hover:scale-110 transition-transform ${scrolled ? darkMode ? "text-white" : "" : 'text-white'
-                        }`}
-                >
-                    {darkMode ? <FaSun /> : <FaMoon />}
-                </button>
 
-                {/* Mobile Menu Toggle */}
-                <button
-                    onClick={toggleMenu}
-                    className="btn btn-ghost btn-circle lg:hidden ml-4"
-                    aria-label="Toggle menu"
-                >
-                    {menuOpen ? (
-                        <FaTimes size={24} className={scrolled ? darkMode ? 'text-white' : '' : 'text-white'} />
-                    ) : (
-                        <FaBars size={24} className={scrolled ? darkMode ? 'text-white' : '' : 'text-white'} />
-                    )}
-                </button>
+                {/* Right Side buttons */}
+                <div className="flex items-center gap-2">
+                    {/* Dark Mode Toggle */}
+                    <button
+                        onClick={activeMode}
+                        aria-label="Toggle dark mode"
+                        className={`border border-dashed ${scrolled ? darkMode ? "border-white" : "border-black" : 'border-white'
+                            } text-base md:text-xl p-1.5 md:p-2 rounded-full shadow hover:scale-110 transition-transform ${scrolled ? darkMode ? "text-white" : "" : 'text-white'
+                            }`}
+                    >
+                        {darkMode ? <FaSun /> : <FaMoon />}
+                    </button>
+
+                    {/* Mobile Menu Toggle */}
+                    <button
+                        onClick={toggleMenu}
+                        className="btn btn-ghost btn-circle lg:hidden"
+                        aria-label="Toggle menu"
+                    >
+                        {menuOpen ? (
+                            <FaTimes size={24} className={scrolled ? darkMode ? 'text-white' : '' : 'text-white'} />
+                        ) : (
+                            <FaBars size={24} className={scrolled ? darkMode ? 'text-white' : '' : 'text-white'} />
+                        )}
+                    </button>
+                </div>
             </div>
 
             {/* Backdrop */}

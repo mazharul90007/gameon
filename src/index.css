@@ -26,6 +26,10 @@
     --font-roboto: "roboto", "sans-serif"; /* Fonts */
 }
 
+@utility btn-primary {
+    @apply py-3 px-6 bg-button border border-button rounded cursor-pointer hover:scale-95 transform transition-transform;
+  }
+
 .button-fill {
     @apply py-3 px-6 bg-button border border-button rounded cursor-pointer hover:scale-95 transform transition-transform
 }

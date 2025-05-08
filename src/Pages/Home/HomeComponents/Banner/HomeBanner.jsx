@@ -5,21 +5,21 @@ import { motion } from "motion/react"
 const HomeBanner = () => {
     return (
         <div
-            className="relative bg-cover bg-center h-[70vh] md:h-[70vh] lg:h-[100vh] flex text-white"
+            className="relative bg-cover bg-center h-[70vh] md:h-[60vh] lg:h-[100vh] flex text-white"
             style={{
                 backgroundImage: `url(${bannerimg})`
             }}
         >
             <div className="absolute inset-0 bg-black/30 bg-opacity-50"></div>
-            <div className="absolute bottom-10 left-10 z-10">
+            <div className="absolute bottom-4 md:bottom-10 left-4  md:left-10 z-10">
                 <h1 className="text-3xl md:text-5xl lg:text-7xl font-semibold tracking-wide uppercase font-teko">
                     Gym Equipments & <br /> Sports Gears
                 </h1>
                 <div className="flex items-center gap-3">
-                    <button className="button-fill-sm md:button-fill">
+                    <button className="btn btn-primary">
                         Shop Now
                     </button>
-                    <button className="button-outline-sm md:button-outline">
+                    <button className="btn btn-outline">
                         Learn More
                     </button>
                 </div>
