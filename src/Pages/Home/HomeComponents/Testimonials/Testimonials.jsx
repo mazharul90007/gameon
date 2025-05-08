@@ -56,8 +56,8 @@ const Testimonials = () => {
     };
 
     return (
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-            <div className="max-w-7xl mx-auto">
+        <section className="py-16 bg-gray-50">
+            <div className="w-11/12 mx-auto">
                 <div className="text-center mb-12">
                     <p className="uppercase text-xl font-semibold text-center font-teko text-primary mb-2">Testimonials</p>
                     <h3 className="uppercase text-4xl md:text-5xl font-bold text-center font-teko mb-4">What Our Customers Say</h3>
@@ -77,7 +77,7 @@ const Testimonials = () => {
                             whileHover={{ y: -10 }}
                             className="flex"
                         >
-                            <div className="bg-white px-6 py-12 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col h-full w-full relative overflow-hidden group">
+                            <div className="bg-white px-6 py-16 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex flex-col h-full w-full relative overflow-hidden group">
                                 {/* Decorative accent circle */}
                                 <div
                                     className={`absolute -top-16 -left-16 h-40 w-40 ${testimonial.accentColor} rounded-full opacity-10 transition-all duration-500 ease-in-out z-0 group-hover:scale-[12] group-hover:opacity-10 group-hover:-top-full group-hover:-left-full`}
@@ -87,7 +87,7 @@ const Testimonials = () => {
                                 ></div>
 
                                 {/* Content */}
-                                <div className="z-10 relative">
+                                <div className="z-10 relative flex flex-col flex-grow">
                                     <div className="flex items-center mb-4">
                                         {[...Array(5)].map((_, i) => (
                                             <FaStar
