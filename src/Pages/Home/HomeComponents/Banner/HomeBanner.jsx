@@ -5,7 +5,7 @@ import { motion } from "motion/react"
 const HomeBanner = () => {
     return (
         <div
-            className="relative bg-cover bg-center h-[60vh] md:h-[70vh] lg:h-[100vh] flex text-white"
+            className="relative bg-cover bg-center h-[70vh] md:h-[70vh] lg:h-[100vh] flex text-white"
             style={{
                 backgroundImage: `url(${bannerimg})`
             }}
@@ -16,16 +16,16 @@ const HomeBanner = () => {
                     Gym Equipments & <br /> Sports Gears
                 </h1>
                 <div className="flex items-center gap-3">
-                    <button className="py-3 px-6 bg-button border border-button rounded cursor-pointer hover:scale-95 transform transition-transform">
+                    <button className="button-fill-sm md:button-fill">
                         Shop Now
                     </button>
-                    <button className="py-3 px-6 border border-white rounded cursor-pointer hover:scale-95 transform transition-transform hover:bg-white hover:text-black">
+                    <button className="button-outline-sm md:button-outline">
                         Learn More
                     </button>
                 </div>
             </div>
-            <div className="absolute bottom-10 right-10 flex items-center gap-3 cursor-pointer">
-                <h3 className="uppercase text-xl font-thin">Scroll down</h3>
+            <div className="absolute bottom-4 md:bottom-10 right-4  md:right-10 flex items-center gap-1 md:gap-3 cursor-pointer">
+                <h3 className="uppercase text-sm md:text-xl font-thin">Scroll down</h3>
                 <motion.div
                     animate={{
                         y: [0, 10, 0], // Moves down 10px and back up
@@ -36,7 +36,7 @@ const HomeBanner = () => {
                         ease: "easeInOut",
                     }}
                 >
-                    <FaArrowDownLong className="text-lg font-thin" />
+                    <FaArrowDownLong className="text-sm md:text-lg font-thin" />
                 </motion.div>
             </div>
         </div>

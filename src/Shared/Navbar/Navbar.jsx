@@ -125,7 +125,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Desktop Navigation */}
-                <div className={`hidden lg:flex space-x-6 font-medium ${scrolled ? darkMode ? "text-white" : "text-black" : 'text-white'
+                <div className={`hidden lg:flex space-x-3 font-medium ${scrolled ? darkMode ? "text-white" : "text-black" : 'text-white'
                     }`}>
                     {renderLinks}
                 </div>
