@@ -11,7 +11,7 @@ const RecentProducts = () => {
                 {products.slice(0, 8).map(product => <ProductCard key={product.productId} product={product}></ProductCard>)}
             </div>
             <div className='w-full flex flex-col'>
-                <button className="py-3 px-6 bg-button border border-button rounded cursor-pointer hover:scale-95 transform transition-transform text-white w-fit mx-auto mt-12 ">
+                <button className="btn btn-primary mx-auto mt-12 ">
                     View All Items
                 </button>
             </div>

@@ -27,21 +27,9 @@
 }
 
 @utility btn-primary {
-    @apply py-3 px-6 bg-button border border-button rounded cursor-pointer hover:scale-95 transform transition-transform;
+    @apply bg-button border border-button rounded cursor-pointer hover:scale-95 transform transition-transform;
   }
 
-.button-fill {
-    @apply py-3 px-6 bg-button border border-button rounded cursor-pointer hover:scale-95 transform transition-transform
-}
-
-.button-fill-sm {
-    @apply py-1 px-3 text-sm bg-button border border-button rounded cursor-pointer hover:scale-95 transform transition-transform
-}
-
 .button-outline {
-    @apply py-3 px-6 border border-white rounded cursor-pointer hover:scale-95 transform transition-transform hover:bg-white hover:text-black
-}
-
-.button-outline-sm {
-    @apply py-1 px-3 text-sm border border-white rounded cursor-pointer hover:scale-95 transform transition-transform hover:bg-white hover:text-black
+    @apply border border-white rounded cursor-pointer hover:scale-95 transform transition-transform hover:bg-white hover:text-black
 }

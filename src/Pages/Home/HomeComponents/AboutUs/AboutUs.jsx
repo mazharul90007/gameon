@@ -101,10 +101,10 @@ const AboutUs = () => {
         </ul>
 
         <div className="flex flex-wrap gap-4">
-          <button className="py-3 px-6 bg-button border border-button rounded hover:scale-95 transform transition-transform text-white">
+          <button className="btn btn-primary">
             Shop Now
           </button>
-          <button className="py-3 px-6 border border-gray-700 rounded hover:scale-95 transform transition-transform hover:bg-gray-100 hover:text-black">
+          <button className="btn btn-neutral btn-outline">
             Learn More
           </button>
         </div>

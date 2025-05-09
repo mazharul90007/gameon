@@ -24,40 +24,34 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
 
-    const isHomePage = ["/entertainment", "/login", "/register", "/travel", "/events"].includes(location.pathname);
+    const isTransparent = (location.pathname === "/") && !scrolled;
 
     // Scroll effect handler
     useEffect(() => {
         const handleScroll = () => {
-            const isScrolled = window.scrollY > 10;
-            if (isScrolled !== scrolled) {
-                setScrolled(isScrolled);
-            }
+            setScrolled(window.scrollY > 10)
         };
+        if (location.pathname === "/") {
+            window.addEventListener("scroll", handleScroll);
+            handleScroll();
+        } else {
+            setScrolled(true)
+        }
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [scrolled]);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [location.pathname]);
 
     // Theme detection
     useEffect(() => {
         const savedTheme = localStorage.getItem("Theme");
         setDarkMode(savedTheme === "dark_mode");
-    }, [setDarkMode, isHomePage]);
+    }, [setDarkMode]);
 
     const activeMode = () => {
         const newMode = !darkMode;
         setDarkMode(newMode);
         localStorage.setItem("Theme", newMode ? "dark_mode" : "light_mode");
     };
-
-    // const handleLogout = () => {
-    //     logOut()
-    //         .then(() => setUser(null))
-    //         .catch(console.error);
-    //     setMenuOpen(false);
-    //     setDropdownOpen(false);
-    // };
 
     const closeMenu = () => setMenuOpen(false);
     const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -82,15 +76,24 @@ const Navbar = () => {
 
     const navLinks = [
         { to: "/", label: "Home", icon: <IoHomeOutline /> },
-        { to: "/travel", label: "Travel", icon: <RiCompassDiscoverLine /> },
+        { to: "/shop", label: "Shop", icon: <RiCompassDiscoverLine /> },
         { to: "/events", label: "Event", icon: <MdOutlineEventAvailable /> },
-        { to: "/entertainment", label: "Entertainment", icon: <MdOutlineMovieCreation /> },
         { to: "/about", label: "About", icon: <MdOutlineDescription /> },
         { to: "/contact", label: "Contact", icon: <MdOutlineContactSupport /> },
     ];
 
-    const navLinkClasses = ({ isActive }) =>
-        `flex items-center gap-2 hover:text-main py-1 px-2 hover:border-b-2 hover:border-main rounded transform transition-transform duration-300 ${isActive ? "text-main" : ""}`;
+    const navLinkClasses = ({ isActive }) => {
+        const baseColor = menuOpen && isTransparent
+            ? "text-black"  // Mobile menu always shows black text when transparent
+            : isTransparent
+                ? "text-white"  // Desktop transparent navbar
+                : darkMode
+                    ? "text-white"
+                    : "text-black";
+
+        const activeColor = "text-main";
+        return `flex items-center gap-1 ${isActive ? `px-2 py-1 border-b-2 border-main rounded ${activeColor}` : baseColor} hover:text-main`;
+    };
 
     const renderLinks = (
         <>
@@ -108,8 +111,8 @@ const Navbar = () => {
         <nav
             className={`px-4 md:px-14 py-1 md:py-4 fixed top-0 z-40 w-full transition-all duration-300 ${scrolled
                 ? darkMode
-                    ? "bg-[#1A1A1A] shadow-lg"
-                    : "bg-white shadow-lg"
+                    ? "bg-[#1A1A1A] shadow"
+                    : "bg-white shadow"
                 : "bg-transparent"
                 }`}
         >
@@ -125,7 +128,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Desktop Navigation */}
-                <div className={`hidden lg:flex space-x-3 font-medium ${scrolled ? darkMode ? "text-white" : "text-black" : 'text-white'
+                <div className={`hidden lg:flex gap-4 font-medium ${scrolled ? darkMode ? "text-white" : "text-black" : 'text-white'
                     }`}>
                     {renderLinks}
                 </div>
